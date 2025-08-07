@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Configuración
 st.set_page_config(page_title="Predicción Nota Cálculo", layout="centered")
-st.title("📘 Predicción de Nota Final en Cálculo")
+st.title("📘 Predicción de la Calificación Final en la asignatura de Cálculo")
 st.markdown("Modelos: Ridge + Fórmula 60/40 (Diagnóstico 60%)")
 
 # Cargar dataset
@@ -54,8 +54,9 @@ promedios_5 = X_test[['aritmetica', 'algebra', 'geometria_plana', 'trigonometria
 y_pred_manual = 0.6 * X_test['diagnostico'] + 0.4 * promedios_5
 y_pred_manual = np.clip(y_pred_manual, 0, 100)
 
-# --- Predicción Personalizada ---
-st.subheader("🔍 Predicción Personalizada")
+# --- Predicción Personalizada con texto pequeño ---
+st.markdown("📝 <small>Introduce la calificación obtenida en el semestre anterior incluyendo la del diagnóstico de este semestre</small>", unsafe_allow_html=True)
+
 with st.form("formulario_prediccion"):
     aritmetica = st.number_input("Aritmética", 0.0, 100.0)
     algebra = st.number_input("Álgebra", 0.0, 100.0)
@@ -123,5 +124,4 @@ if st.checkbox("👀 Mostrar dataset completo"):
 # --- Tabla de predicciones ---
 if st.checkbox("📋 Mostrar tabla de predicciones (Ridge)"):
     st.dataframe(pd.DataFrame({"Real": y_test.values, "Predicho": y_pred_ridge}))
-
 
