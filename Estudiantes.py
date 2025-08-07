@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Configuración
 st.set_page_config(page_title="Predicción Nota Cálculo", layout="centered")
-st.title("📘 Predicción de la Calificación Final en la asignatura de Cálculo")
+st.title("📘 Predicción Inteligente de la Calificación Final en la asignatura de Cálculo")
 st.markdown("Modelos: Ridge + Fórmula 60/40 (Diagnóstico 60%)")
 
 # Cargar dataset
