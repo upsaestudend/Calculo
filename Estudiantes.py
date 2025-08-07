@@ -55,7 +55,7 @@ y_pred_manual = 0.6 * X_test['diagnostico'] + 0.4 * promedios_5
 y_pred_manual = np.clip(y_pred_manual, 0, 100)
 
 # --- Texto personalizado con tamaño más grande ---
-st.markdown('<p style="font-size:16px;">📝 Introduce la calificación obtenida en el semestre anterior incluyendo la del diagnóstico de este semestre</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:16px;">📝 Introduce la calificación obtenida en los respectivos temas del semestre anterior, incluyendo la del diagnóstico de este semestre</p>', unsafe_allow_html=True)
 
 # --- Predicción Personalizada ---
 with st.form("formulario_prediccion"):
