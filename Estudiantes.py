@@ -54,9 +54,10 @@ promedios_5 = X_test[['aritmetica', 'algebra', 'geometria_plana', 'trigonometria
 y_pred_manual = 0.6 * X_test['diagnostico'] + 0.4 * promedios_5
 y_pred_manual = np.clip(y_pred_manual, 0, 100)
 
-# --- Predicción Personalizada con texto pequeño ---
-st.markdown("📝 <small>Introduce la calificación obtenida en el semestre anterior incluyendo la del diagnóstico de este semestre</small>", unsafe_allow_html=True)
+# --- Texto personalizado con tamaño más grande ---
+st.markdown('<p style="font-size:16px;">📝 Introduce la calificación obtenida en el semestre anterior incluyendo la del diagnóstico de este semestre</p>', unsafe_allow_html=True)
 
+# --- Predicción Personalizada ---
 with st.form("formulario_prediccion"):
     aritmetica = st.number_input("Aritmética", 0.0, 100.0)
     algebra = st.number_input("Álgebra", 0.0, 100.0)
